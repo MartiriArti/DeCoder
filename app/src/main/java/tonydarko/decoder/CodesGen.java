@@ -15,24 +15,26 @@ public class CodesGen {
 
         int[] mass = new int[bites];
         char sym = 'А';
+        int n = bites - 1;
 
         for (int i = 0; i < 97; i++) {
-            if (mass[2] == systemIschesl) {
-                mass[1]++;
-                mass[2] = 0;
+            for (int c = n; c >= 0; c--) {
+                if (mass[c] == systemIschesl) {
+                    mass[c-1]++;
+                    mass[c] = 0;
+                }
             }
-            if (mass[1] == systemIschesl) {
-                mass[0]++;
-                mass[1] = 0;
-            }
-
             if (i == 64) {
                 sym = ' ';
             }
 
-            hm.put(sym, "" + mass[0] + "" + mass[1] + "" + mass[2]);
+            String mas = "";
+            for (int t = 0; t < bites; t++){
+                mas += "" + mass[t];
+            }
+            hm.put(sym,mas);
             sym++;
-            mass[2]++;
+            mass[bites-1]++;
         }
     }
 

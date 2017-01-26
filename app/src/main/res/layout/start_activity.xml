@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:inputType="numberDecimal"
+    <LinearLayout
         android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:padding="5dp"
+        android:layout_weight="1"
+        android:inputType="numberDecimal"
         android:layout_gravity="center"
         android:id="@+id/edInSys"
         android:hint="Сколько значений"
@@ -13,18 +22,26 @@
         android:layout_height="wrap_content" />
 
     <EditText
+        android:padding="5dp"
+        android:layout_weight="1"
         android:inputType="numberDecimal"
-        android:layout_marginTop="20dp"
         android:hint="Сколько бит"
         android:id="@+id/edInBit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+
+    <TextView
+        android:id="@+id/tvres"
+        android:layout_marginTop="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
         android:padding="20dp"
+        android:layout_marginTop="20dp"
         android:background="@color/colorC"
-        android:layout_marginTop="60dp"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal"
         android:text="К Ко/Декодеру"
         android:id="@+id/toMain"
         android:layout_width="wrap_content"
