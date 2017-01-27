@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText edbin, edstring;
     TextView tvInBin, tvInStr;
     int S,B;
+    Boolean Latin, Kiril, Num, Symb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +28,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         S = intent.getIntExtra("System",0);
         B = intent.getIntExtra("Bites",0);
+        Latin = intent.getBooleanExtra("Latin",false);
+        Kiril = intent.getBooleanExtra("Kiril",false);
+        Num = intent.getBooleanExtra("Num",false);
+        Symb = intent.getBooleanExtra("Symb",false);
 
-        System.out.println("Main: " + S + B);
 
-        final CodesGen cG = new CodesGen(S,B);
+        System.out.println("Main: " + Latin + Kiril + Num + Symb);
+
+        final CodesGen cG = new CodesGen(S,B, Latin, Kiril, Num, Symb);
 
         vocabulary = (Button) findViewById(R.id.vocabulary);
         toBin = (Button) findViewById(R.id.btnToBin);
@@ -127,6 +133,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(this, VocActivity.class);
         intent.putExtra("S",S);
         intent.putExtra("B",B);
+        intent.putExtra("Latin", Latin);
+        intent.putExtra("Kiril", Kiril);
+        intent.putExtra("Num", Num);
+        intent.putExtra("Symb", Symb);
+
         startActivity(intent);
     }
 }

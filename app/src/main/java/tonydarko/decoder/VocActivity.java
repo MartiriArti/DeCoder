@@ -13,6 +13,7 @@ import java.util.Map;
 public class VocActivity extends Activity {
 
     int S,B;
+    Boolean Latin, Kiril, Num, Symb;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,10 @@ public class VocActivity extends Activity {
 
         S = intent.getIntExtra("S",0);
         B = intent.getIntExtra("B",0);
+        Latin = intent.getBooleanExtra("Latin",false);
+        Kiril = intent.getBooleanExtra("Kiril",false);
+        Num = intent.getBooleanExtra("Num",false);
+        Symb = intent.getBooleanExtra("Symb",false);
 
         System.out.println("Voc :" + S + B);
         if (S == 0){
@@ -30,7 +35,7 @@ public class VocActivity extends Activity {
             B = new MainActivity().B;
         }
 
-        final CodesGen cG = new CodesGen(S,B);
+        final CodesGen cG = new CodesGen(S,B, Latin, Kiril, Num, Symb);
 
         LinearLayout linLayout = (LinearLayout) findViewById(R.id.linLayout);
         LayoutInflater ltInflater = getLayoutInflater();

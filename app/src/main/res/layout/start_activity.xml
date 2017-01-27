@@ -37,9 +37,48 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <LinearLayout
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <CheckBox
+        android:id="@+id/cbLatin"
+        android:textAlignment="center"
+        android:layout_weight="1"
+        android:text="A-Za-z"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <CheckBox
+        android:id="@+id/cbKiril"
+        android:textAlignment="center"
+        android:text="А-Яа-я"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <CheckBox
+        android:id="@+id/cbNum"
+        android:textAlignment="center"
+        android:text="0-9"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <CheckBox
+        android:id="@+id/cbSymb"
+        android:textAlignment="center"
+        android:text="Symb."
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
     <Button
-        android:padding="20dp"
-        android:layout_marginTop="20dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="80dp"
         android:background="@color/colorC"
         android:layout_gravity="center_horizontal"
         android:text="К Ко/Декодеру"
