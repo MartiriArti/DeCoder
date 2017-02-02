@@ -1,89 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:layout_marginTop="40dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ll_margin_top"
+        android:orientation="horizontal">
 
-    <EditText
-        android:padding="5dp"
-        android:layout_weight="1"
-        android:inputType="numberDecimal"
-        android:layout_gravity="center"
-        android:id="@+id/edInSys"
-        android:hint="Сколько значений"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edInSys"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:hint="@string/hint_ed_count"
+            android:inputType="numberDecimal"
+            android:padding="@dimen/ed_padding"
+            android:textAlignment="center" />
 
-    <EditText
-        android:padding="5dp"
-        android:layout_weight="1"
-        android:inputType="numberDecimal"
-        android:hint="Сколько бит"
-        android:id="@+id/edInBit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+        <EditText
+            android:id="@+id/edInBit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hint_ed_count_bites"
+            android:inputType="numberDecimal"
+            android:padding="@dimen/ed_padding"
+            android:textAlignment="center" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tvres"
-        android:layout_marginTop="12dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/tv_margin_top"
+        android:textAlignment="center" />
 
     <LinearLayout
-        android:layout_marginTop="40dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ll_margin_top_2"
+        android:orientation="horizontal">
 
-    <CheckBox
-        android:id="@+id/cbLatin"
-        android:textAlignment="center"
-        android:layout_weight="1"
-        android:text="A-Za-z"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <CheckBox
+            android:id="@+id/cbLatin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/a_za_z"
+            android:textAlignment="center" />
 
-    <CheckBox
-        android:id="@+id/cbKiril"
-        android:textAlignment="center"
-        android:text="А-Яа-я"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <CheckBox
+            android:id="@+id/cbKiril"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tv_kiril"
+            android:textAlignment="center" />
 
-    <CheckBox
-        android:id="@+id/cbNum"
-        android:textAlignment="center"
-        android:text="0-9"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <CheckBox
+            android:id="@+id/cbNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/_0_9"
+            android:textAlignment="center" />
 
-    <CheckBox
-        android:id="@+id/cbSymb"
-        android:textAlignment="center"
-        android:text="Symb."
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <CheckBox
+            android:id="@+id/cbSymb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/symb"
+            android:textAlignment="center" />
     </LinearLayout>
+
     <Button
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
-        android:layout_marginTop="80dp"
-        android:background="@color/colorC"
-        android:layout_gravity="center_horizontal"
-        android:text="К Ко/Декодеру"
         android:id="@+id/toMain"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/btn_margin_top"
+        android:background="@color/colorC"
+        android:paddingLeft="@dimen/btn_padding_left"
+        android:paddingRight="@dimen/btn_padding_right"
+        android:text="@string/btn_to_main" />
 
 </LinearLayout>

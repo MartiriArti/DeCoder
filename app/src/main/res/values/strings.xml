@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">DeCoder</string>
+
+    <string name="main_coder">Закодировать</string>
+    <string name="main_decoder">Раскодировать</string>
+    <string name="main_empty_field">Пустое поле</string>
+    <string name="main_in_bites">"В биты "</string>
+    <string name="main_empty_2nd_field">Пустое поле 2</string>
+    <string name="main_not_equels_bites">"Не кратно "</string>
+    <string name="main_in_string">"В строку "</string>
+
+    <string name="start_add_kiril">"Добавленна Кириллица "</string>
+    <string name="start_deleted_kiril">"Удаленна Кириллица "</string>
+    <string name="start_add_latin">"Добавленна Латиница "</string>
+    <string name="start_deleted_latin">"Удалеленна Латиница "</string>
+    <string name="start_add_numbers">"Добавленны Числа "</string>
+    <string name="start_deleted_numders">"Удаленны Числа "</string>
+    <string name="start_add_symb">"Добавленны Символы "</string>
+    <string name="start_deleted_symb">"Удаленны Символы "</string>
+    <string name="start_count_codes">"Кодов = "</string>
+    <string name="start_count_symb">"Символов = "</string>
+    <string name="start_nedd_more_codes">Не хватает кодов</string>
+    <string name="start_fields_empty">Поля не заполнены</string>
+
+    <string name="hint_ed_count">Сколько значений</string>
+    <string name="hint_ed_count_bites">Сколько бит</string>
+    <string name="a_za_z">A-Za-z</string>
+    <string name="tv_kiril">А-Яа-я</string>
+    <string name="_0_9">0-9</string>
+    <string name="symb">Symb.</string>
+    <string name="btn_to_main">К Ко/Декодеру</string>
+
+    <string name="start_tvres_voc">"Словарь = "</string>
+    <string name="start_not_11"><![CDATA[Количество символов <= 10]]></string>
+    <string name="main_tv_decod">Раскодировать</string>
 </resources>

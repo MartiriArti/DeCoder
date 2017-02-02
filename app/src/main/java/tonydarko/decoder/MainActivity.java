@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button toBin, toString, vocabulary, clear, clear2;
     EditText edbin, edstring;
     TextView tvInBin, tvInStr;
-    int S,B;
+    int S, B;
     Boolean Latin, Kiril, Num, Symb;
 
     @Override
@@ -26,17 +26,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Intent intent = getIntent();
 
-        S = intent.getIntExtra("System",0);
-        B = intent.getIntExtra("Bites",0);
-        Latin = intent.getBooleanExtra("Latin",false);
-        Kiril = intent.getBooleanExtra("Kiril",false);
-        Num = intent.getBooleanExtra("Num",false);
-        Symb = intent.getBooleanExtra("Symb",false);
+        S = intent.getIntExtra("System", 0);
+        B = intent.getIntExtra("Bites", 0);
+        Latin = intent.getBooleanExtra("Latin", false);
+        Kiril = intent.getBooleanExtra("Kiril", false);
+        Num = intent.getBooleanExtra("Num", false);
+        Symb = intent.getBooleanExtra("Symb", false);
 
 
         System.out.println("Main: " + Latin + Kiril + Num + Symb);
 
-        final CodesGen cG = new CodesGen(S,B, Latin, Kiril, Num, Symb);
+        final CodesGen cG = new CodesGen(S, B, Latin, Kiril, Num, Symb);
 
         vocabulary = (Button) findViewById(R.id.vocabulary);
         toBin = (Button) findViewById(R.id.btnToBin);
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tvInBin.setText("Закодировать");
+                tvInBin.setText(R.string.main_coder);
                 edbin.setText("");
             }
         });
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         clear2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tvInStr.setText("Раскодировать");
+                tvInStr.setText(R.string.main_decoder);
                 edstring.setText("");
             }
         });
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 if (edbin.getText().length() == 0) {
-                    Toast.makeText(getApplicationContext(), "Пустое поле", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.main_empty_field, Toast.LENGTH_SHORT).show();
                 } else {
                     String res = "";
                     String s = edbin.getText().toString();
@@ -82,10 +82,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             Character key = entry.getKey();
                             if (key == s.charAt(i)) {
                                 res += cG.hm.get(key);
+                                res += "|";
                             }
                         }
                     }
-                    Toast.makeText(getApplicationContext(), "В биты ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.main_in_bites, Toast.LENGTH_SHORT).show();
                     tvInBin.setText(res);
                 }
             }
@@ -96,9 +97,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 if (edstring.getText().length() == 0) {
-                    Toast.makeText(getApplicationContext(), "Пустое поле 2", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.main_empty_2nd_field, Toast.LENGTH_SHORT).show();
                 } else if (edstring.length() % cG.bites != 0) {
-                    Toast.makeText(getApplicationContext(), "Не кратно 3м", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.main_not_equels_bites) + cG.bites + "!", Toast.LENGTH_SHORT).show();
                 } else {
                     String anres = "";
                     String s = edstring.getText().toString();
@@ -118,10 +119,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     for (int y = 0; y < sub.length; y++) {
                         for (Map.Entry entry : cG.hm.entrySet()) {
-                            if (entry.getValue().equals(sub[y])) anres += entry.getKey();
+                            if (entry.getValue().equals(sub[y])) {
+                                anres += entry.getKey();
+                            }
                         }
                     }
-                    Toast.makeText(getApplicationContext(), "В строку " + anres, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.main_in_string) + anres, Toast.LENGTH_SHORT).show();
                     tvInStr.setText(anres);
                 }
             }
@@ -131,8 +134,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         Intent intent = new Intent(this, VocActivity.class);
-        intent.putExtra("S",S);
-        intent.putExtra("B",B);
+        intent.putExtra("S", S);
+        intent.putExtra("B", B);
         intent.putExtra("Latin", Latin);
         intent.putExtra("Kiril", Kiril);
         intent.putExtra("Num", Num);
